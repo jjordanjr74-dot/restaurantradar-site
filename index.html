@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pueblo Restaurant Radar — Real-Time City Health & Operational Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #07090e;
+            --surface: #0f172a;
+            --accent: #f59e0b;
+            --accent-glow: #f59e0b33;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --card-bg: rgba(15, 23, 42, 0.75);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        /* Sticky Glass Header */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            background: rgba(7, 9, 14, 0.65);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+        .brand { font-weight: 800; font-size: 20px; letter-spacing: -0.5px; color: #fff; }
+        .brand span { color: var(--accent); }
+        .nav-btn {
+            padding: 10px 20px;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover { background: #e69008; transform: translateY(-2px); box-shadow: 0 8px 25px var(--accent-glow); }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, var(--bg) 0%, #0c0e16 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at center, transparent 0%, var(--bg) 70%);
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent), #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            max-width: 900px;
+        }
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Features Grid */
+        .features {
+            padding: 120px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-glow);
+            box-shadow: 0 20px 40px var(--accent-glow);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px 20px 40px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 80px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .footer-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-link:hover { color: var(--accent); }
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding-top: 100px; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-stats { gap: 20px; }
+            .stat-value { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">Restaurant<span>Radar</span></div>
+        <a href="#contact" class="nav-btn">Get Started</a>
+    </header>
+
+    <section class="hero">
+        <h1>Real-Time Restaurant Intelligence for Pueblo's Economic Recovery</h1>
+        <p>Monitor operational status, health compliance, and market dynamics across Pueblo's dining landscape. Data-driven insights for economic development, tourism, and investment decisions.</p>
+        
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-value">247</div>
+                <div class="stat-label">Restaurants Tracked</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">94%</div>
+                <div class="stat-label">Accuracy Rate</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">15m</div>
+                <div class="stat-label">Update Frequency</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="section-header">
+            <h2>Operational Intelligence Platform</h2>
+            <p>Real-time data collection and analysis for Pueblo's restaurant ecosystem recovery</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Live Location Tracking</h3>
+                <p>Real-time operational status, hours updates, and location accuracy for every establishment in Pueblo's dining scene.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Economic Indicators</h3>
+                <p>Aggregate metrics on openings, closures, capacity changes, and operational trends indicating economic recovery velocity.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Compliance Monitoring</h3>
+                <p>Health department ratings, safety violations, and regulatory compliance tracking for risk assessment.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Market Analysis</h3>
+                <p>Competitive landscape mapping, gap analysis, and opportunity identification for strategic investment.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Integration</h3>
+                <p>Field verification tools and crowdsourced data collection for ground-truth validation of intelligence.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Data Security</h3>
+                <p>Enterprise-grade encryption and compliance-ready reporting for sensitive economic development data.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+            <a href="#" class="footer-link">Data Sources</a>
+            <a href="#" class="footer-link">Contact</a>
+        </div>
+        <div class="copyright">© 2026 Restaurant Radar. Economic Intelligence for Pueblo's Recovery.</div>
+    </footer>
+</body>
+</html>
