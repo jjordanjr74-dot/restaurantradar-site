@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Privacy policy for Pueblo Restaurant Radar. No ad tracking. Reviews store first name and last initial only.">
+  <title>Privacy Policy — Pueblo Restaurant Radar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <a href="index.html" class="brand" aria-label="Pueblo Restaurant Radar home page">Pueblo<span class="accent">.</span>Radar</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="city-license.html">City License</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+    </nav>
+    <a href="https://trip-domain-elite-new.trycloudflare.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Open the live restaurant radar (opens in new tab)">Open live radar</a>
+  </header>
+
+  <main id="main">
+    <article class="prose">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Pueblo Restaurant Radar &mdash; Last updated October 12, 2026</p>
+
+      <h2>What we are</h2>
+      <p>Pueblo Restaurant Radar is an independent, locally-built service that indexes restaurants, bars, cafes, and fuel stops across southern Colorado and displays them on an interactive map. We are not affiliated with any restaurant chain, ad network, or data broker.</p>
+
+      <h2>Information we collect</h2>
+      <p>We collect the minimum data needed to operate the service:</p>
+      <ul>
+        <li><strong>Reviews:</strong> If you submit a venue review, we store your first name and last initial only (for example, "Maria S."). We do not ask for, store, or display full last names, email addresses, or phone numbers in connection with reviews.</li>
+        <li><strong>Venue contact submissions:</strong> If you submit a venue listing or update via Telegram, that conversation is subject to Telegram's own privacy policy. We store only the venue data you provide (name, address, hours, phone) in our database.</li>
+        <li><strong>Payment data:</strong> Subscription payments are processed by Stripe. We do not receive or store card numbers. Stripe's privacy policy governs payment data handling.</li>
+      </ul>
+
+      <h2>What we do not collect</h2>
+      <ul>
+        <li>We do not use analytics tracking pixels or third-party ad scripts.</li>
+        <li>We do not set advertising cookies or build behavioral profiles.</li>
+        <li>We do not sell, rent, or share personal data with third parties for marketing purposes.</li>
+        <li>We do not require an account to search the map or view venue details.</li>
+      </ul>
+
+      <h2>Infrastructure and third-party services</h2>
+      <p>The site is served through <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare</a>. Cloudflare processes network requests and may log IP addresses and request metadata for security and performance purposes, subject to their privacy policy.</p>
+      <p>The live radar application may be hosted on infrastructure that logs standard server access logs (IP address, timestamp, requested path). These logs are not linked to any personal identifier and are not retained beyond normal operational windows.</p>
+      <p>Google Fonts is loaded from Google's servers for the Plus Jakarta Sans typeface. Google may log font requests; see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's privacy policy</a>.</p>
+
+      <h2>Cookies and local storage</h2>
+      <p>The service worker caches a copy of the site shell in your browser's Cache Storage API for offline use. This is a local cache only — nothing is transmitted back to us. No tracking cookies are set by this site.</p>
+
+      <h2>Data retention</h2>
+      <p>Review attributions (first name + last initial) are retained as long as the review is published. If you request removal of a review you submitted, contact us via the listing desk and we will remove it within a reasonable time.</p>
+
+      <h2>Your rights</h2>
+      <p>You have the right to request access to, correction of, or deletion of any personal data we hold about you. Because we collect very little data tied to individuals, such requests are typically straightforward. Contact us through Telegram to make a request.</p>
+
+      <h2>Children</h2>
+      <p>This service is not directed at children under 13. We do not knowingly collect personal data from children.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>If we make material changes to this policy, we will update the "Last updated" date at the top of this page. Continued use of the service after a change constitutes acceptance of the updated policy.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy or data requests: <a href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer">message the listing desk on Telegram</a>.</p>
+    </article>
+  </main>
+
+  <footer>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="city-license.html">City License</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer">List your venue</a>
+      <a href="https://trip-domain-elite-new.trycloudflare.com/" target="_blank" rel="noopener noreferrer">Open radar</a>
+    </nav>
+    <p class="footer-tagline">Built in Pueblo, Colorado — independent local intelligence</p>
+    <p class="footer-copy">&copy; <span id="yr">2026</span> Pueblo Restaurant Radar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var el = document.getElementById('yr');
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(function () {});
+    }
+  </script>
+</body>
+</html>

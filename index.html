@@ -1,290 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pueblo Restaurant Radar — Real-Time City Health & Operational Intelligence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #07090e;
-            --surface: #0f172a;
-            --accent: #f59e0b;
-            --accent-glow: #f59e0b33;
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: rgba(255, 255, 255, 0.08);
-            --card-bg: rgba(15, 23, 42, 0.75);
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            background: var(--bg);
-            color: var(--text);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        /* Sticky Glass Header */
-        header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 40px;
-            background: rgba(7, 9, 14, 0.65);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-            z-index: 100;
-        }
-        .brand { font-weight: 800; font-size: 20px; letter-spacing: -0.5px; color: #fff; }
-        .brand span { color: var(--accent); }
-        .nav-btn {
-            padding: 10px 20px;
-            background: var(--accent);
-            color: #000;
-            font-weight: 700;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        .nav-btn:hover { background: #e69008; transform: translateY(-2px); box-shadow: 0 8px 25px var(--accent-glow); }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 120px 20px 80px;
-            background: linear-gradient(135deg, var(--bg) 0%, #0c0e16 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at center, transparent 0%, var(--bg) 70%);
-            pointer-events: none;
-        }
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--accent), #fbbf24);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            max-width: 900px;
-        }
-        .hero p {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            color: var(--text-muted);
-            max-width: 700px;
-            margin-bottom: 40px;
-            line-height: 1.7;
-        }
-        .hero-stats {
-            display: flex;
-            gap: 40px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .stat {
-            text-align: center;
-        }
-        .stat-value {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 5px;
-        }
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* Features Grid */
-        .features {
-            padding: 120px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: var(--text);
-        }
-        .section-header p {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        .feature-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-glow);
-            box-shadow: 0 20px 40px var(--accent-glow);
-        }
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--accent);
-        }
-        .feature-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--text);
-        }
-        .feature-card p {
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-        
-        /* Footer */
-        footer {
-            padding: 60px 20px 40px;
-            text-align: center;
-            border-top: 1px solid var(--border);
-            margin-top: 80px;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        .footer-link {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .footer-link:hover { color: var(--accent); }
-        .copyright {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero { padding-top: 100px; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero-stats { gap: 20px; }
-            .stat-value { font-size: 2rem; }
-            .features-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pueblo Restaurant Radar tracks 932 restaurants, bars, cafes, and fuel stops across 8 southern Colorado cities. See live open/closed status, hours, and phone on an interactive map.">
+  <meta property="og:title" content="Pueblo Restaurant Radar — Live Venue Map for Southern Colorado">
+  <meta property="og:description" content="932 venues. 8 cities. Open status and hours on one map.">
+  <meta property="og:type" content="website">
+  <title>Pueblo Restaurant Radar — Live Venue Map for Southern Colorado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <header>
-        <div class="brand">Restaurant<span>Radar</span></div>
-        <a href="#contact" class="nav-btn">Get Started</a>
-    </header>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-    <section class="hero">
-        <h1>Real-Time Restaurant Intelligence for Pueblo's Economic Recovery</h1>
-        <p>Monitor operational status, health compliance, and market dynamics across Pueblo's dining landscape. Data-driven insights for economic development, tourism, and investment decisions.</p>
-        
-        <div class="hero-stats">
-            <div class="stat">
-                <div class="stat-value">247</div>
-                <div class="stat-label">Restaurants Tracked</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">94%</div>
-                <div class="stat-label">Accuracy Rate</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">15m</div>
-                <div class="stat-label">Update Frequency</div>
-            </div>
+  <header>
+    <a href="index.html" class="brand" aria-label="Pueblo Restaurant Radar home page">Pueblo<span class="accent">.</span>Radar</a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="city-license.html">City License</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+    <a href="https://trip-domain-elite-new.trycloudflare.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Open the live restaurant radar (opens in new tab)">Open live radar</a>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-mesh" aria-hidden="true"></div>
+      <p class="hero-badge" aria-label="Badge: Building in Pueblo, Colorado">Building in Pueblo, Colorado</p>
+      <h1 id="hero-heading">Know what's open before you head out</h1>
+      <p class="hero-sub">932 restaurants, bars, cafes, and fuel stops across 8 southern Colorado cities. Live open/closed status, hours, and phone — all on one map. Free to search.</p>
+      <div class="hero-ctas">
+        <a href="https://trip-domain-elite-new.trycloudflare.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open live radar</a>
+        <a href="pricing.html" class="btn btn-outline">List your venue</a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="radar-wrap">
+          <div class="radar-ring"></div>
+          <div class="radar-ring"></div>
+          <div class="radar-ring"></div>
+          <div class="radar-sweep"></div>
+          <div class="radar-center"></div>
         </div>
+      </div>
     </section>
 
-    <section class="features">
-        <div class="section-header">
-            <h2>Operational Intelligence Platform</h2>
-            <p>Real-time data collection and analysis for Pueblo's restaurant ecosystem recovery</p>
+    <!-- Stats strip -->
+    <div class="stats-strip" role="region" aria-label="Database statistics">
+      <div>
+        <span class="stat-num">932</span>
+        <span class="stat-label">venues tracked</span>
+      </div>
+      <div>
+        <span class="stat-num">42</span>
+        <span class="stat-label">fuel stops</span>
+      </div>
+      <div>
+        <span class="stat-num">8</span>
+        <span class="stat-label">cities covered</span>
+      </div>
+      <div>
+        <span class="stat-num">4</span>
+        <span class="stat-label">reviews from early users</span>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <section class="section" aria-labelledby="features-heading">
+      <div class="section-header reveal">
+        <h2 id="features-heading">What the radar shows</h2>
+        <p>Every data point is pulled live from the database. No cached screenshots, no guessing.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#9711;</div>
+          <h3>Live open/closed status</h3>
+          <p>Hours-of-operation data sourced from each venue record. See at a glance which spots are open right now without calling ahead.</p>
         </div>
-        
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📍</div>
-                <h3>Live Location Tracking</h3>
-                <p>Real-time operational status, hours updates, and location accuracy for every establishment in Pueblo's dining scene.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📊</div>
-                <h3>Economic Indicators</h3>
-                <p>Aggregate metrics on openings, closures, capacity changes, and operational trends indicating economic recovery velocity.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Compliance Monitoring</h3>
-                <p>Health department ratings, safety violations, and regulatory compliance tracking for risk assessment.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📈</div>
-                <h3>Market Analysis</h3>
-                <p>Competitive landscape mapping, gap analysis, and opportunity identification for strategic investment.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Mobile Integration</h3>
-                <p>Field verification tools and crowdsourced data collection for ground-truth validation of intelligence.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Data Security</h3>
-                <p>Enterprise-grade encryption and compliance-ready reporting for sensitive economic development data.</p>
-            </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#9742;</div>
+          <h3>Phone and hours on every pin</h3>
+          <p>Tap any venue pin to see its full operating hours and phone number. Call directly from the map without copying anything.</p>
         </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#9670;</div>
+          <h3>8 cities in one view</h3>
+          <p>Pueblo, Colorado Springs, Pueblo West, Fountain, Manitou Springs, Falcon, Peyton, and the Fort Spring area — all indexed and searchable.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="feature-icon" aria-hidden="true">&#9981;</div>
+          <h3>Fuel stops alongside restaurants</h3>
+          <p>42 gas stations are included on the same map. Useful when you're unfamiliar with an area and need both.</p>
+        </div>
+      </div>
     </section>
 
-    <footer>
-        <div class="footer-links">
-            <a href="#" class="footer-link">Privacy Policy</a>
-            <a href="#" class="footer-link">Terms of Service</a>
-            <a href="#" class="footer-link">Data Sources</a>
-            <a href="#" class="footer-link">Contact</a>
-        </div>
-        <div class="copyright">© 2026 Restaurant Radar. Economic Intelligence for Pueblo's Recovery.</div>
-    </footer>
+    <!-- How it works -->
+    <section class="section" aria-labelledby="hiw-heading" style="background: linear-gradient(to bottom, transparent, rgba(15,23,42,0.4));">
+      <div class="section-header reveal">
+        <h2 id="hiw-heading">How it works</h2>
+        <p>Three steps from opening the tab to getting directions.</p>
+      </div>
+      <ol class="steps" aria-label="Steps to use the radar">
+        <li class="step reveal">
+          <span class="step-num" aria-hidden="true">01</span>
+          <h3>Open the map</h3>
+          <p>The radar loads in any browser. No app download, no account. Your location centers the view automatically.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num" aria-hidden="true">02</span>
+          <h3>Filter by type or city</h3>
+          <p>Narrow to restaurants, bars, coffee, or fuel. Switch between any of the 8 covered cities with one tap.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num" aria-hidden="true">03</span>
+          <h3>Tap a pin and go</h3>
+          <p>Each pin shows hours and a phone number. Get directions or call before you drive. No login required at any step.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Pricing teaser -->
+    <section class="pricing-teaser" aria-labelledby="teaser-heading">
+      <h2 id="teaser-heading" class="reveal" style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.6px; margin-bottom: 12px;">Put your restaurant on the radar</h2>
+      <p class="reveal" style="color: var(--text-muted); max-width: 480px; margin: 0 auto 32px; font-size: 0.95rem;">Get in front of locals who are actively looking for somewhere to eat right now. Founding Professional spots are limited.</p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="pricing.html" class="btn btn-primary reveal">See pricing</a>
+        <a href="city-license.html" class="btn btn-outline reveal">City license info</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="city-license.html">City License</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer">List your venue</a>
+      <a href="https://trip-domain-elite-new.trycloudflare.com/" target="_blank" rel="noopener noreferrer">Open radar</a>
+    </nav>
+    <p class="footer-tagline">Built in Pueblo, Colorado — independent local intelligence</p>
+    <p class="footer-copy">&copy; <span id="yr">2026</span> Pueblo Restaurant Radar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var el = document.getElementById('yr');
+      if (el) el.textContent = new Date().getFullYear();
+    })();
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(function () {});
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+  </script>
 </body>
 </html>

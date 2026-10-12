@@ -1,0 +1,19 @@
+{
+  "name": "Pueblo Restaurant Radar",
+  "short_name": "Radar",
+  "description": "Live restaurant and venue map for Pueblo and southern Colorado. 932 venues across 8 cities.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#f59e0b",
+  "background_color": "#07090e",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
