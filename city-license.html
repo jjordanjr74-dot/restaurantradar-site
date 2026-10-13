@@ -3,50 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="City License for chambers of commerce, downtown improvement districts, and tourism offices. White-label restaurant and venue intelligence for $199/mo.">
-  <title>City License — Pueblo Restaurant Radar</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css">
+  <meta name="description" content="City License for chambers of commerce, downtown improvement districts, and tourism offices. White-label restaurant and venue intelligence for $199/mo across 8 cities.">
+  <meta name="theme-color" content="#07080a">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.json">
+  <title>City License — Restaurant Radar</title>
+  <link rel="canonical" href="https://restaurantradar.app/city-license.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Restaurant Radar">
+  <meta property="og:title" content="City License — Restaurant Radar">
+  <meta property="og:description" content="City License for chambers, districts, and tourism offices: $199/mo, white-label across 8 cities, live venue data.">
+  <meta property="og:url" content="https://restaurantradar.app/city-license.html">
+  <meta property="og:image" content="https://restaurantradar.app/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Restaurant Radar live venue map preview for Southern Colorado">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="City License — Restaurant Radar">
+  <meta name="twitter:description" content="City License for chambers, districts, and tourism offices: $199/mo, white-label across 8 cities.">
+  <meta name="twitter:image" content="https://restaurantradar.app/assets/img/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <header>
-    <a href="index.html" class="brand" aria-label="Pueblo Restaurant Radar home page">Pueblo<span class="accent">.</span>Radar</a>
-    <nav class="site-nav" aria-label="Primary navigation">
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="Restaurant Radar home page">Pueblo<span class="dot">.</span>Radar</a>
+    <nav class="nav" id="siteNav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="city-license.html" aria-current="page">City License</a>
       <a href="privacy.html">Privacy</a>
+      <a href="#app" class="btn btn-primary nav-cta" data-app-url="url" target="_blank" rel="noopener noreferrer">Open live map</a>
     </nav>
-    <a href="https://trip-domain-elite-new.trycloudflare.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Open the live restaurant radar (opens in new tab)">Open live radar</a>
+    <button class="hamburger" type="button" id="hamburger" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </header>
 
   <main id="main">
-
-    <!-- Page hero -->
-    <section class="hero" style="min-height: 52vh; padding-top: 120px; padding-bottom: 56px;" aria-labelledby="cl-heading">
+    <section class="hero hero-compact" aria-labelledby="cl-title">
       <div class="hero-mesh" aria-hidden="true"></div>
-      <p class="hero-badge">For chambers, districts &amp; tourism offices</p>
-      <h1 id="cl-heading" style="font-size: clamp(2rem, 4.5vw, 3.2rem);">Your city's dining guide, under your brand</h1>
-      <p class="hero-sub">The City License gives your organization a white-label version of the Restaurant Radar — 932 venues, 8 cities, live data — deployed as part of your own visitor or member portal for $199/mo.</p>
-      <div class="hero-ctas">
-        <a href="https://trip-domain-elite-new.trycloudflare.com/api/checkout/city_license" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Subscribe — $199/mo</a>
-        <a href="https://t.me/HermesEbookBot?start=vendor" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Message us on Telegram</a>
+      <div class="hero-inner">
+        <p class="hero-badge">For chambers, districts &amp; tourism offices</p>
+        <h1 id="cl-title">Your city's dining guide, under your brand.</h1>
+        <p class="hero-sub">The City License gives your organization a white-label version of Restaurant Radar — 932 venues, 8 cities, live data — deployed as part of your own visitor or member portal for $199/mo.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" data-app-url="checkout_city" target="_blank" rel="noopener noreferrer">Subscribe — $199/mo</a>
+          <a class="btn btn-link" href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer">Message us on Telegram</a>
+        </div>
       </div>
     </section>
 
-    <!-- Who this is for -->
-    <section class="section" aria-labelledby="who-heading">
+    <section class="section wrap" aria-labelledby="who-title">
       <div class="section-header reveal">
-        <h2 id="who-heading">Who uses a City License</h2>
-        <p>Any organization whose job is to send people to local businesses.</p>
+        <span class="eyebrow">Who this is for</span>
+        <h2 id="who-title">Any organization sending people to local businesses.</h2>
       </div>
-      <div class="pitch-grid">
+      <div class="grid cols-2 col-lg-4">
         <div class="pitch-card reveal">
           <h3>Chambers of Commerce</h3>
           <p>Give members and visitors a live, accurate directory of every restaurant and venue in your coverage area. Updates automatically as the database changes.</p>
@@ -66,88 +86,99 @@
       </div>
     </section>
 
-    <!-- What you get -->
-    <section class="section" style="background: linear-gradient(to bottom, transparent, rgba(15,23,42,0.5));" aria-labelledby="included-heading">
+    <section class="section wrap" aria-labelledby="included-title">
       <div class="section-header reveal">
-        <h2 id="included-heading">What the license includes</h2>
+        <span class="eyebrow">What you get</span>
+        <h2 id="included-title">Six things included with every City License.</h2>
       </div>
-      <div class="features-grid">
+      <div class="grid cols-2 col-lg-6">
         <div class="feature-card reveal">
-          <div class="feature-icon" aria-hidden="true">&#9670;</div>
+          <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="8" cy="12" r="5"/><circle cx="16" cy="7" r="4"/><circle cx="6" cy="19" r="3"/></svg></div>
           <h3>All 932 venues</h3>
           <p>Every restaurant, bar, cafe, and fuel stop in the database — across all 8 covered cities — available in your licensed instance.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon" aria-hidden="true">&#9711;</div>
+          <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg></div>
           <h3>Live open/closed data</h3>
           <p>Hours and status are pulled from the same live database that powers the main radar. Your visitors see current information.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon" aria-hidden="true">&#9775;</div>
+          <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M10 7v9c1 1 0 0 1 4-4"/><path d="M8 8h7M13 11h1.5"/></svg></div>
           <h3>Custom branding</h3>
           <p>Your organization's name, colors, and logo in place of the Pueblo Restaurant Radar branding. Deployable on your own domain or as an iframe embed.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon" aria-hidden="true">&#9993;</div>
+          <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M18 4h6v8h-6v-8"/><path d="M2 20h20v-12h-20v12"/></svg></div>
           <h3>Direct setup support</h3>
           <p>We handle the technical integration. Message the listing desk on Telegram and we coordinate deployment with your web team.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon" aria-hidden="true">&#9998;</div>
+          <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 7v10h16v-10h-16M12 7v10"/><path d="M4 8h16"/></svg></div>
           <h3>Ongoing data maintenance</h3>
           <p>The venue database is maintained by our team. New openings, closures, and hours changes are applied to your licensed instance automatically.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon" aria-hidden="true">&#9673;</div>
+          <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <h3>8-city coverage area</h3>
           <p>Pueblo, Colorado Springs, Pueblo West, Fountain, Manitou Springs, Falcon, Peyton, and the Fort Spring area — all included at the base license rate.</p>
         </div>
       </div>
     </section>
 
-    <!-- Pricing block -->
-    <section class="section" aria-labelledby="cl-price-heading">
-      <div style="max-width: 540px; margin: 0 auto; text-align: center;" class="reveal">
-        <h2 id="cl-price-heading" style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.6px; margin-bottom: 20px;">Straightforward monthly rate</h2>
-        <div class="pricing-card featured" style="margin-bottom: 24px;">
+    <section class="section wrap" aria-labelledby="cl-price-title">
+      <div class="section-header reveal" style="max-width:560px;margin-inline:auto;">
+        <span class="eyebrow">Plan &amp; pricing</span>
+        <h2 id="cl-price-title">Straightforward monthly rate.</h2>
+      </div>
+      <div class="pricing-grid" style="max-width:540px;">
+        <div class="pricing-card featured reveal" style="text-align:center;">
           <p class="pricing-tier">City License</p>
           <p class="pricing-price">$199<span class="per">/mo</span></p>
           <p class="pricing-desc">Full white-label deployment across all 8 cities. No per-venue fees. No traffic caps. Cancel any time.</p>
-          <a href="https://trip-domain-elite-new.trycloudflare.com/api/checkout/city_license" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to City License for $199 per month (opens Stripe checkout)">Subscribe — $199/mo</a>
+          <a class="btn btn-primary btn-block" data-app-url="checkout_city" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to City License for $199 per month (opens Stripe checkout)">Subscribe — $199/mo</a>
+          <p class="pricing-fineprint">Prefer to discuss scope before subscribing? <a href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer">Message the listing desk on Telegram</a> and we can walk through your use case.</p>
         </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">Prefer to discuss scope before subscribing? <a href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">Message the listing desk on Telegram</a> and we can walk through your use case.</p>
       </div>
     </section>
-
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="index.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="city-license.html">City License</a>
       <a href="privacy.html">Privacy</a>
       <a href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer">List your venue</a>
-      <a href="https://trip-domain-elite-new.trycloudflare.com/" target="_blank" rel="noopener noreferrer">Open radar</a>
+      <a data-app-url="url" target="_blank" rel="noopener noreferrer">Open live map</a>
     </nav>
     <p class="footer-tagline">Built in Pueblo, Colorado — independent local intelligence</p>
-    <p class="footer-copy">&copy; <span id="yr">2026</span> Pueblo Restaurant Radar. All rights reserved.</p>
+    <p class="footer-copy">&copy; <span id="yr">2026</span> Restaurant Radar. All rights reserved.</p>
   </footer>
 
   <script>
+    document.documentElement.classList.add('js');
     (function () {
-      var el = document.getElementById('yr');
-      if (el) el.textContent = new Date().getFullYear();
+      fetch('assets/app_url.json').then(function (r) { return r.json(); }).then(function (j) {
+        if (!j || !j.url) return;
+        document.querySelectorAll('[data-app-url]').forEach(function (a) {
+          var key = a.getAttribute('data-app-url');
+          if (j[key]) a.setAttribute('href', j[key]);
+        });
+      }).catch(function () {});
     })();
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(function () {});
-    }
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+    (function () {
+      var btn = document.getElementById('hamburger'); var nav = document.getElementById('siteNav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () { var open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
+      nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+    })();
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else { document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); }); }
+    (function () { var el = document.getElementById('yr'); if (el) el.textContent = new Date().getFullYear(); })();
+    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(function () {}); }
   </script>
 </body>
 </html>

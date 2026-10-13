@@ -1,4 +1,4 @@
-const CACHE = 'radar-v1';
+const CACHE = 'radar-v2';
 const SHELL = [
   '/',
   '/index.html',
@@ -7,6 +7,8 @@ const SHELL = [
   '/privacy.html',
   '/assets/site.css',
   '/assets/icon.svg',
+  '/assets/img/product-map.png',
+  '/assets/img/og-image.png',
   '/manifest.json'
 ];
 
@@ -27,9 +29,8 @@ self.addEventListener('activate', function(event) {
           return caches.delete(k);
         })
       );
-    })
+    }).then(function() { return self.clients.claim(); })
   );
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', function(event) {

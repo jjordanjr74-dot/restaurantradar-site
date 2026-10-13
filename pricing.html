@@ -3,50 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="List your Pueblo-area restaurant on the radar for $9/mo. Founding Professional spots are limited to the first 10 venues. City License available at $199/mo.">
-  <title>Pricing — Pueblo Restaurant Radar</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css">
+  <meta name="description" content="List your Colorado venue on Restaurant Radar for $9/mo (founding) or take white-label city coverage at $199/mo. Real Stripe checkout, cancel any time.">
+  <meta name="theme-color" content="#07080a">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.json">
+  <title>Pricing — Restaurant Radar</title>
+  <link rel="canonical" href="https://restaurantradar.app/pricing.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Restaurant Radar">
+  <meta property="og:title" content="Pricing — Restaurant Radar">
+  <meta property="og:description" content="Founding Professional $9/mo, City License $199/mo. Real Stripe checkout, cancel any time.">
+  <meta property="og:url" content="https://restaurantradar.app/pricing.html">
+  <meta property="og:image" content="https://restaurantradar.app/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Restaurant Radar live venue map preview for Southern Colorado">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pricing — Restaurant Radar">
+  <meta name="twitter:description" content="Founding Professional $9/mo, City License $199/mo. Real Stripe checkout, cancel any time.">
+  <meta name="twitter:image" content="https://restaurantradar.app/assets/img/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <header>
-    <a href="index.html" class="brand" aria-label="Pueblo Restaurant Radar home page">Pueblo<span class="accent">.</span>Radar</a>
-    <nav class="site-nav" aria-label="Primary navigation">
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="Restaurant Radar home page">Pueblo<span class="dot">.</span>Radar</a>
+    <nav class="nav" id="siteNav" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="pricing.html" aria-current="page">Pricing</a>
       <a href="city-license.html">City License</a>
       <a href="privacy.html">Privacy</a>
+      <a href="#app" class="btn btn-primary nav-cta" data-app-url="url" target="_blank" rel="noopener noreferrer">Open live map</a>
     </nav>
-    <a href="https://trip-domain-elite-new.trycloudflare.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Open the live restaurant radar (opens in new tab)">Open live radar</a>
+    <button class="hamburger" type="button" id="hamburger" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </header>
 
   <main id="main">
-
-    <!-- Page hero -->
-    <section class="hero" style="min-height: 42vh; padding-top: 120px; padding-bottom: 48px;" aria-labelledby="pricing-heading">
+    <section class="hero hero-compact" aria-labelledby="pricing-title">
       <div class="hero-mesh" aria-hidden="true"></div>
-      <p class="hero-badge">Transparent pricing. No surprises.</p>
-      <h1 id="pricing-heading" style="font-size: clamp(2rem, 4.5vw, 3.2rem);">Get your venue on the map</h1>
-      <p class="hero-sub">Two tiers available today. Both are real subscriptions with real Stripe checkout. No contracts, cancel any time.</p>
+      <div class="hero-inner">
+        <p class="hero-badge">Transparent pricing. No surprises.</p>
+        <h1 id="pricing-title">Get your venue on the map.</h1>
+        <p class="hero-sub">Two tiers available today. Both are real subscriptions with real Stripe checkout. No contracts, cancel any time.</p>
+      </div>
     </section>
 
-    <!-- Pricing cards -->
-    <section class="section" style="padding-top: 0;" aria-labelledby="plans-heading">
-      <h2 id="plans-heading" class="visually-hidden">Available plans</h2>
+    <section class="section wrap" style="padding-top: 0;" aria-label="Available plans">
       <div class="pricing-grid">
-
-        <!-- Founding Professional -->
         <div class="pricing-card featured reveal">
-          <div class="featured-tag">10 spots available</div>
+          <span class="tag">10 spots available</span>
           <p class="pricing-tier">Founding Professional</p>
           <p class="pricing-price">$9<span class="per">/mo</span></p>
-          <p class="pricing-desc">For the first 10 Pueblo-area venues. This rate is locked in for as long as you stay subscribed.</p>
+          <p class="pricing-desc">For the first 10 Pueblo-area venues. This rate is locked for as long as you stay subscribed.</p>
           <ul class="pricing-features" aria-label="Founding Professional features">
             <li>Your venue listed on the live radar map</li>
             <li>Open/closed status shown to all users</li>
@@ -55,15 +72,14 @@
             <li>Rate locked for life at $9/mo (founding members only)</li>
             <li>Covers first Pueblo venue; additional venues billed separately</li>
           </ul>
-          <a href="https://trip-domain-elite-new.trycloudflare.com/api/checkout/founding_professional" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Founding Professional for $9 per month (opens Stripe checkout)">Subscribe — $9/mo</a>
-          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 12px; text-align: center;">Stripe checkout. Cancel any time. 10 spots, first-come basis.</p>
+          <a class="btn btn-primary" data-app-url="checkout_founding" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to Founding Professional for $9 per month (opens Stripe checkout)">Subscribe — $9/mo</a>
+          <p class="pricing-fineprint">Stripe checkout. Cancel any time. 10 spots, first-come basis.</p>
         </div>
 
-        <!-- City License -->
         <div class="pricing-card reveal">
           <p class="pricing-tier">City License</p>
           <p class="pricing-price">$199<span class="per">/mo</span></p>
-          <p class="pricing-desc">White-label coverage for a chamber of commerce, downtown improvement district, or tourism office. Full details on the <a href="city-license.html" style="color: var(--accent);">City License page</a>.</p>
+          <p class="pricing-desc">White-label coverage for a chamber of commerce, downtown improvement district, or tourism office. Full details on the <a href="city-license.html" style="color:var(--accent)">City License page</a>.</p>
           <ul class="pricing-features" aria-label="City License features">
             <li>All 932 venues in your coverage area</li>
             <li>Custom branding and domain options</li>
@@ -72,88 +88,83 @@
             <li>Direct setup support via Telegram</li>
             <li>Venue data kept current by our team</li>
           </ul>
-          <a href="https://trip-domain-elite-new.trycloudflare.com/api/checkout/city_license" class="btn btn-outline" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to City License for $199 per month (opens Stripe checkout)">Subscribe — $199/mo</a>
-          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 12px; text-align: center;">Or <a href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">message us on Telegram</a> to discuss scope first.</p>
+          <a class="btn btn-secondary" data-app-url="checkout_city" target="_blank" rel="noopener noreferrer" aria-label="Subscribe to City License for $199 per month (opens Stripe checkout)">Subscribe — $199/mo</a>
+          <p class="pricing-fineprint">Or <a href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer">message us on Telegram</a> to discuss scope first.</p>
         </div>
-
       </div>
     </section>
 
-    <!-- Listing desk note -->
-    <section class="section" style="padding-top: 0; max-width: 700px; text-align: center;" aria-labelledby="listing-heading">
-      <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px;" class="reveal">
-        <h2 id="listing-heading" style="font-size: 1.2rem; font-weight: 700; margin-bottom: 12px;">Prefer to talk first?</h2>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Reach the listing desk on Telegram. We can answer questions about how your venue data gets added and what the map shows to users.</p>
-        <a href="https://t.me/HermesEbookBot?start=vendor" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Message listing desk on Telegram</a>
+    <section class="section wrap narrow" aria-labelledby="listing-title">
+      <div class="feature-card reveal" style="text-align:center;">
+        <h2 id="listing-title" style="font-size:1.2rem;">Prefer to talk first?</h2>
+        <p>Reach the listing desk on Telegram. We can answer questions about how your venue data gets added and what the map shows to users.</p>
+        <div class="actions" style="margin-top:8px;"><a class="btn btn-link" href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer">Message listing desk on Telegram</a></div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="section" aria-labelledby="faq-heading">
+    <section class="section wrap" aria-labelledby="faq-title">
       <div class="section-header reveal">
-        <h2 id="faq-heading">Common questions</h2>
+        <span class="eyebrow">Common questions</span>
+        <h2 id="faq-title">Asked before subscribing</h2>
       </div>
-      <div style="max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
-        <div class="feature-card reveal">
-          <h3>What appears on my venue pin?</h3>
+      <div class="faq">
+        <details class="reveal" open>
+          <summary>What appears on my venue pin?</summary>
           <p>Your name, address, hours, phone number, open/closed status, and any category tags you provide. No markup, no ordering system — just the facts users need to decide whether to visit.</p>
-        </div>
-        <div class="feature-card reveal">
-          <h3>How do I update my venue details?</h3>
+        </details>
+        <details class="reveal">
+          <summary>How do I update my venue details?</summary>
           <p>Through the listing desk on Telegram. Send a message with your updated hours, phone, or address and we apply the change to the live database.</p>
-        </div>
-        <div class="feature-card reveal">
-          <h3>Are there other pricing tiers?</h3>
-          <p>Professional ($29/mo) and Premier ($49/mo) tiers are planned but not yet available for purchase. Only Founding Professional ($9/mo) and City License ($199/mo) have active Stripe checkout today.</p>
-        </div>
-        <div class="feature-card reveal">
-          <h3>Do you take a cut of orders?</h3>
+        </details>
+        <details class="reveal">
+          <summary>Are there other pricing tiers?</summary>
+          <p>Professional ($29/mo) and Premier ($49/mo) are planned but not yet available for purchase. Only Founding Professional ($9/mo) and City License ($199/mo) have active Stripe checkout today.</p>
+        </details>
+        <details class="reveal">
+          <summary>Do you take a cut of orders?</summary>
           <p>No. There is no ordering functionality. The radar shows information and lets users call you directly. Zero percent markup on anything.</p>
-        </div>
+        </details>
       </div>
     </section>
-
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="index.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="city-license.html">City License</a>
       <a href="privacy.html">Privacy</a>
       <a href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer">List your venue</a>
-      <a href="https://trip-domain-elite-new.trycloudflare.com/" target="_blank" rel="noopener noreferrer">Open radar</a>
+      <a data-app-url="url" target="_blank" rel="noopener noreferrer">Open live map</a>
     </nav>
     <p class="footer-tagline">Built in Pueblo, Colorado — independent local intelligence</p>
-    <p class="footer-copy">&copy; <span id="yr">2026</span> Pueblo Restaurant Radar. All rights reserved.</p>
+    <p class="footer-copy">&copy; <span id="yr">2026</span> Restaurant Radar. All rights reserved.</p>
   </footer>
 
-  <style>
-    .visually-hidden {
-      position: absolute;
-      width: 1px; height: 1px;
-      padding: 0; margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      white-space: nowrap;
-      border: 0;
-    }
-  </style>
-
   <script>
+    document.documentElement.classList.add('js');
     (function () {
-      var el = document.getElementById('yr');
-      if (el) el.textContent = new Date().getFullYear();
+      fetch('assets/app_url.json').then(function (r) { return r.json(); }).then(function (j) {
+        if (!j || !j.url) return;
+        document.querySelectorAll('[data-app-url]').forEach(function (a) {
+          var key = a.getAttribute('data-app-url');
+          if (j[key]) a.setAttribute('href', j[key]);
+        });
+      }).catch(function () {});
     })();
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(function () {});
-    }
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+    (function () {
+      var btn = document.getElementById('hamburger'); var nav = document.getElementById('siteNav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () { var open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
+      nav.addEventListener('click', function (e) { if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); } });
+    })();
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } }); }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else { document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); }); }
+    (function () { var el = document.getElementById('yr'); if (el) el.textContent = new Date().getFullYear(); })();
+    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(function () {}); }
   </script>
 </body>
 </html>

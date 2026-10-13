@@ -3,169 +3,226 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pueblo Restaurant Radar tracks 932 restaurants, bars, cafes, and fuel stops across 8 southern Colorado cities. See live open/closed status, hours, and phone on an interactive map.">
-  <meta property="og:title" content="Pueblo Restaurant Radar — Live Venue Map for Southern Colorado">
-  <meta property="og:description" content="932 venues. 8 cities. Open status and hours on one map.">
-  <meta property="og:type" content="website">
-  <title>Pueblo Restaurant Radar — Live Venue Map for Southern Colorado</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css">
+  <meta name="description" content="Restaurant Radar tracks 932 restaurants, bars, cafes, and fuel stops across 8 southern Colorado cities. Live open/closed status, hours, and phone on one map. Free to search.">
+  <meta name="theme-color" content="#07080a">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.json">
+  <title>Restaurant Radar — Live venue map for Southern Colorado</title>
+  <link rel="canonical" href="https://restaurantradar.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Restaurant Radar">
+  <meta property="og:title" content="Restaurant Radar — Live venue map for Southern Colorado">
+  <meta property="og:description" content="932 venues. 8 cities. Live open/closed status, hours, and phone on one map.">
+  <meta property="og:url" content="https://restaurantradar.app/">
+  <meta property="og:image" content="https://restaurantradar.app/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Restaurant Radar live venue map preview for Southern Colorado">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Restaurant Radar — Live venue map for Southern Colorado">
+  <meta name="twitter:description" content="932 venues. 8 cities. Live open/closed status, hours, and phone on one map.">
+  <meta name="twitter:image" content="https://restaurantradar.app/assets/img/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <header>
-    <a href="index.html" class="brand" aria-label="Pueblo Restaurant Radar home page">Pueblo<span class="accent">.</span>Radar</a>
-    <nav class="site-nav" aria-label="Primary navigation">
+  <header class="site-header">
+    <a href="index.html" class="brand" aria-label="Restaurant Radar home page">Pueblo<span class="dot">.</span>Radar</a>
+    <nav class="nav" id="siteNav" aria-label="Primary navigation">
       <a href="index.html" aria-current="page">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="city-license.html">City License</a>
       <a href="privacy.html">Privacy</a>
+      <a href="#app" class="btn btn-primary nav-cta" data-app-url="url" target="_blank" rel="noopener noreferrer">Open live map</a>
     </nav>
-    <a href="https://trip-domain-elite-new.trycloudflare.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" aria-label="Open the live restaurant radar (opens in new tab)">Open live radar</a>
+    <button class="hamburger" type="button" id="hamburger" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </header>
 
   <main id="main">
-
     <!-- Hero -->
-    <section class="hero" aria-labelledby="hero-heading">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-mesh" aria-hidden="true"></div>
-      <p class="hero-badge" aria-label="Badge: Building in Pueblo, Colorado">Building in Pueblo, Colorado</p>
-      <h1 id="hero-heading">Know what's open before you head out</h1>
-      <p class="hero-sub">932 restaurants, bars, cafes, and fuel stops across 8 southern Colorado cities. Live open/closed status, hours, and phone — all on one map. Free to search.</p>
-      <div class="hero-ctas">
-        <a href="https://trip-domain-elite-new.trycloudflare.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Open live radar</a>
-        <a href="pricing.html" class="btn btn-outline">List your venue</a>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="radar-wrap">
-          <div class="radar-ring"></div>
-          <div class="radar-ring"></div>
-          <div class="radar-ring"></div>
-          <div class="radar-sweep"></div>
-          <div class="radar-center"></div>
+      <div class="hero-inner">
+        <p class="hero-badge">Live · Built in Pueblo, Colorado</p>
+        <h1 id="hero-title">Know what's open before you head out.</h1>
+        <p class="hero-sub">932 restaurants, bars, cafes, and fuel stops across 8 southern Colorado cities. Live open/closed status, hours, and phone — all on one map. Free to search.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" data-app-url="url" target="_blank" rel="noopener noreferrer">Open live map</a>
+          <a class="btn btn-secondary" href="pricing.html">List your venue</a>
         </div>
+        <p class="hero-trust"><strong>932</strong> venues &middot; <strong>8</strong> cities &middot; <strong>42</strong> fuel stops &middot; no account needed</p>
+      </div>
+      <div class="frame reveal">
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img src="assets/img/product-map.png" alt="Restaurant Radar live map showing venue pins across Pueblo and southern Colorado" width="1024" height="576">
+        <p class="frame-caption"><span>60 located pins in range</span><span>map data &copy; OpenStreetMap</span></p>
       </div>
     </section>
 
-    <!-- Stats strip -->
-    <div class="stats-strip" role="region" aria-label="Database statistics">
-      <div>
-        <span class="stat-num">932</span>
-        <span class="stat-label">venues tracked</span>
-      </div>
-      <div>
-        <span class="stat-num">42</span>
-        <span class="stat-label">fuel stops</span>
-      </div>
-      <div>
-        <span class="stat-num">8</span>
-        <span class="stat-label">cities covered</span>
-      </div>
-      <div>
-        <span class="stat-num">4</span>
-        <span class="stat-label">reviews from early users</span>
-      </div>
+    <!-- Stats -->
+    <div class="stats" role="region" aria-label="Restaurant Radar database statistics">
+      <div class="stat"><span class="stat-num">932</span><span class="stat-label">venues tracked</span></div>
+      <div class="stat"><span class="stat-num">42</span><span class="stat-label">fuel stops</span></div>
+      <div class="stat"><span class="stat-num">8</span><span class="stat-label">cities covered</span></div>
+      <div class="stat"><span class="stat-num">3</span><span class="stat-label">reviews from early users</span></div>
     </div>
 
     <!-- Features -->
-    <section class="section" aria-labelledby="features-heading">
+    <section class="section wrap" aria-labelledby="features-title">
       <div class="section-header reveal">
-        <h2 id="features-heading">What the radar shows</h2>
-        <p>Every data point is pulled live from the database. No cached screenshots, no guessing.</p>
+        <span class="eyebrow">What the radar shows</span>
+        <h2 id="features-title">Every venue pin is a real database row.</h2>
+        <p>Data comes straight from the live database. No cached screenshots, no guessed ratings, no invented reviews.</p>
       </div>
-      <div class="features-grid">
+      <div class="grid cols-2 col-lg-4">
         <div class="feature-card reveal">
-          <div class="feature-icon" aria-hidden="true">&#9711;</div>
+          <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg></div>
           <h3>Live open/closed status</h3>
-          <p>Hours-of-operation data sourced from each venue record. See at a glance which spots are open right now without calling ahead.</p>
+          <p>Hours-of-operation data sourced from each venue record. See which spots are open right now without calling ahead.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon" aria-hidden="true">&#9742;</div>
+          <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.12.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.58 2.8.7A2 2 0 0 1 22 16.9z"/></svg></div>
           <h3>Phone and hours on every pin</h3>
-          <p>Tap any venue pin to see its full operating hours and phone number. Call directly from the map without copying anything.</p>
+          <p>Tap any pin to see full hours and a phone number. Call directly from the map without writing anything down.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon" aria-hidden="true">&#9670;</div>
+          <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <h3>8 cities in one view</h3>
-          <p>Pueblo, Colorado Springs, Pueblo West, Fountain, Manitou Springs, Falcon, Peyton, and the Fort Spring area — all indexed and searchable.</p>
+          <p>Pueblo, Colorado Springs, Pueblo West, Fountain, Manitou Springs, Falcon, Peyton, and the Fort Spring area.</p>
         </div>
         <div class="feature-card reveal">
-          <div class="feature-icon" aria-hidden="true">&#9981;</div>
+          <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V8l5-4h6l5 4v14"/><path d="M4 8h16M12 8v14"/><path d="M7.5 12h.01M11 12h.01"/></svg></div>
           <h3>Fuel stops alongside restaurants</h3>
-          <p>42 gas stations are included on the same map. Useful when you're unfamiliar with an area and need both.</p>
+          <p>42 gas and truck stops on the same map — useful when you're unfamiliar with an area and need both.</p>
         </div>
       </div>
     </section>
 
     <!-- How it works -->
-    <section class="section" aria-labelledby="hiw-heading" style="background: linear-gradient(to bottom, transparent, rgba(15,23,42,0.4));">
+    <section class="section wrap" aria-labelledby="hiw-title">
       <div class="section-header reveal">
-        <h2 id="hiw-heading">How it works</h2>
-        <p>Three steps from opening the tab to getting directions.</p>
+        <span class="eyebrow">How it works</span>
+        <h2 id="hiw-title">Three steps to somewhere open.</h2>
+        <p>From opening the tab to getting directions.</p>
       </div>
-      <ol class="steps" aria-label="Steps to use the radar">
-        <li class="step reveal">
-          <span class="step-num" aria-hidden="true">01</span>
+      <div class="grid col-lg-3">
+        <div class="step reveal">
+          <span class="step-num">01</span>
           <h3>Open the map</h3>
-          <p>The radar loads in any browser. No app download, no account. Your location centers the view automatically.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step-num" aria-hidden="true">02</span>
+          <p>The radar loads in any browser. No app download, no account. Sharing your location centers the view on you.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">02</span>
           <h3>Filter by type or city</h3>
-          <p>Narrow to restaurants, bars, coffee, or fuel. Switch between any of the 8 covered cities with one tap.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step-num" aria-hidden="true">03</span>
+          <p>Narrow to restaurants, bars, coffee, or fuel. Switch between any of the 8 covered cities, or search by name.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num">03</span>
           <h3>Tap a pin and go</h3>
-          <p>Each pin shows hours and a phone number. Get directions or call before you drive. No login required at any step.</p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- Pricing teaser -->
-    <section class="pricing-teaser" aria-labelledby="teaser-heading">
-      <h2 id="teaser-heading" class="reveal" style="font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; letter-spacing: -0.6px; margin-bottom: 12px;">Put your restaurant on the radar</h2>
-      <p class="reveal" style="color: var(--text-muted); max-width: 480px; margin: 0 auto 32px; font-size: 0.95rem;">Get in front of locals who are actively looking for somewhere to eat right now. Founding Professional spots are limited.</p>
-      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-        <a href="pricing.html" class="btn btn-primary reveal">See pricing</a>
-        <a href="city-license.html" class="btn btn-outline reveal">City license info</a>
+          <p>Each pin shows open/closed status, hours, and a phone number — with directions to it. No login at any step.</p>
+        </div>
       </div>
     </section>
 
+    <!-- Early-user reviews (real, attributed) -->
+    <section class="section wrap" aria-labelledby="reviews-title">
+      <div class="section-header reveal">
+        <span class="eyebrow">From early users</span>
+        <h2 id="reviews-title">What travelers are reporting</h2>
+        <p>Real reviews submitted through the radar. Ratings are earned, never assigned.</p>
+      </div>
+      <div class="grid col-lg-2">
+        <figure class="quote reveal">
+          <blockquote>Best stop on I-25. Bathrooms are immaculate, the dog run is clean and well-fenced, and parking is easy.</blockquote>
+          <figcaption>Marcus R. <span>&middot; OTR hauler &middot; gas &amp; travel stop review</span></figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <blockquote>Very RV friendly — great wide turnarounds, clean store, and our golden retriever loved the pet area.</blockquote>
+          <figcaption>Sarah Jenkins <span>&middot; RV traveler &middot; gas &amp; travel stop review</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <span class="eyebrow reveal">For venue owners</span>
+        <h2 id="cta-title" class="reveal">Put your restaurant on the radar.</h2>
+        <p class="reveal">Get in front of locals actively looking for somewhere to eat right now. Founding Professional spots are limited to the first 10 venues at a rate locked for life.</p>
+        <div class="actions reveal">
+          <a class="btn btn-primary" href="pricing.html">See pricing</a>
+          <a class="btn btn-link" href="city-license.html">City license info</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <nav class="footer-nav" aria-label="Footer navigation">
       <a href="index.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="city-license.html">City License</a>
       <a href="privacy.html">Privacy</a>
       <a href="https://t.me/HermesEbookBot?start=vendor" target="_blank" rel="noopener noreferrer">List your venue</a>
-      <a href="https://trip-domain-elite-new.trycloudflare.com/" target="_blank" rel="noopener noreferrer">Open radar</a>
+      <a data-app-url="url" target="_blank" rel="noopener noreferrer">Open live map</a>
     </nav>
     <p class="footer-tagline">Built in Pueblo, Colorado — independent local intelligence</p>
-    <p class="footer-copy">&copy; <span id="yr">2026</span> Pueblo Restaurant Radar. All rights reserved.</p>
+    <p class="footer-copy">&copy; <span id="yr">2026</span> Restaurant Radar. All rights reserved.</p>
   </footer>
 
   <script>
+    document.documentElement.classList.add('js');
+
+    // App / checkout links from app_url.json (rotating tunnel) — never hardcoded
     (function () {
-      var el = document.getElementById('yr');
-      if (el) el.textContent = new Date().getFullYear();
+      fetch('assets/app_url.json').then(function (r) { return r.json(); }).then(function (j) {
+        if (!j || !j.url) return;
+        document.querySelectorAll('[data-app-url]').forEach(function (a) {
+          var key = a.getAttribute('data-app-url');
+          if (j[key]) a.setAttribute('href', j[key]);
+        });
+      }).catch(function () {});
     })();
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(function () {});
-    }
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+
+    // Hamburger mobile menu
+    (function () {
+      var btn = document.getElementById('hamburger');
+      var nav = document.getElementById('siteNav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+      });
+    })();
+
+    // Fail-safe scroll reveal (content already visible; only animated under html.js)
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); });
+    }
+
+    (function () { var el = document.getElementById('yr'); if (el) el.textContent = new Date().getFullYear(); })();
+    if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(function () {}); }
   </script>
 </body>
 </html>

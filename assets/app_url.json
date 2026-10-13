@@ -1,1 +1,5 @@
-{"url": "https://trip-domain-elite-new.trycloudflare.com"}
+{
+  "url": "https://trip-domain-elite-new.trycloudflare.com",
+  "checkout_founding": "https://trip-domain-elite-new.trycloudflare.com/api/checkout/founding_professional",
+  "checkout_city": "https://trip-domain-elite-new.trycloudflare.com/api/checkout/city_license"
+}
