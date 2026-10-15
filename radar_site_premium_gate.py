@@ -56,9 +56,23 @@ def main():
     # ---- G1 link hygiene -------------------------------------------------
     dead = [m for h in html.values() for m in re.findall(r'href="(#|)"', h)]
     check("G1 no empty/dead hrefs", not dead, str(dead[:4]))
-    # rotation-safe: tunnel host must never be hardcoded in pages (async loader only)
-    hardcoded = [p for p, h in html.items() if "trycloudflare.com" in h]
-    check("G1 no hardcoded tunnel host in pages (async app_url loader)", not hardcoded, str(hardcoded))
+    # rotation-safe, redefined 2026-10-15 (audit CRITICAL-2): pages now carry STATIC hrefs so a
+    # no-JS visitor and every crawler still gets a money link (measured: 0 of 5 buy CTAs had an href;
+    # hrefs were injected only by fetch('assets/app_url.json')). A hardcoded host is therefore allowed
+    # but must never DRIFT - radar_site_republish.py rewrites host strings on every tunnel rotation, so
+    # the gate compares pages against the loader's own contract file instead of banning hosts outright.
+    try:
+        app_host = json.loads(read("assets/app_url.json"))["url"].rstrip("/")
+    except Exception:
+        app_host = ""
+    drifted = sorted({m for h in html.values() for m in re.findall(r"https://[a-z0-9-]+\.trycloudflare\.com", h)
+                      if app_host and not app_host.startswith(m)})
+    check("G1 every hardcoded host matches assets/app_url.json (no stale tunnel link)",
+          bool(app_host) and not drifted, str(drifted or f"app_url={app_host or 'UNREADABLE'}"))
+    nohref = [f"{p}:{m[:60]}" for p, h in html.items()
+              for m in re.findall(r"<a\s[^>]*data-app-url[^>]*>", h) if "href=" not in m]
+    check("G1 every data-app-url CTA carries a static href (no-JS + crawler money link)",
+          not nohref, str(nohref[:4]))
     # local links resolve
     known = set(PAGES) | {"sitemap.xml", "robots.txt", "manifest.json", "sw.js"}
     bad = []
