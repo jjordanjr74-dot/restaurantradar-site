@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="That page is off the radar. Restaurant Radar — live venue map for Southern Colorado.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07080a">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <title>Page not found — Restaurant Radar</title>
+  <link rel="canonical" href="https://restaurantradar.app/404.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Restaurant Radar">
+  <meta property="og:title" content="Page not found — Restaurant Radar">
+  <meta property="og:description" content="That page is off the radar. Head back to the live venue map for Southern Colorado.">
+  <meta property="og:url" content="https://restaurantradar.app/404.html">
+  <meta property="og:image" content="https://restaurantradar.app/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Restaurant Radar live venue map preview for Southern Colorado">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Page not found — Restaurant Radar">
+  <meta name="twitter:description" content="That page is off the radar. Head back to the live venue map for Southern Colorado.">
+  <meta name="twitter:image" content="https://restaurantradar.app/assets/img/og-image.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    /* Page-local layout only — reuses the site's tokens, fonts and button system */
+    .err-wrap { max-width: var(--max-w-narrow); margin: 0 auto; padding: clamp(80px, 14vw, 160px) var(--s-5) var(--s-9); text-align: center; }
+    .err-code { font-family: var(--font-mono); font-size: clamp(4rem, 18vw, 9rem); font-weight: 700; line-height: 1;
+      color: var(--accent); letter-spacing: -0.04em; text-shadow: var(--glow-subtle); }
+    .err-eyebrow { display: inline-block; margin: var(--s-5) 0 var(--s-3); text-transform: uppercase; letter-spacing: .14em;
+      font-size: .75rem; font-weight: 600; color: var(--accent); }
+    .err-title { font-size: clamp(1.6rem, 4.5vw, 2.4rem); font-weight: 700; color: var(--text); margin-bottom: var(--s-4); }
+    .err-sub { color: var(--text-2); font-size: 1.05rem; line-height: 1.6; max-width: 46ch; margin: 0 auto var(--s-7); }
+    .err-actions { display: flex; flex-wrap: wrap; gap: var(--s-3); justify-content: center; }
+    .err-hint { margin-top: var(--s-7); color: var(--text-4); font-size: .875rem; }
+    .err-hint a { color: var(--text-3); }
+    .err-hint a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <a href="/index.html" class="brand" aria-label="Restaurant Radar home page">Pueblo<span class="dot">.</span>Radar</a>
+    <nav class="nav" id="siteNav" aria-label="Primary navigation">
+      <a href="/index.html">Home</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/city-license.html">City License</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+    <button class="hamburger" type="button" id="hamburger" aria-expanded="false" aria-controls="siteNav" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="err-wrap" aria-labelledby="err-title">
+      <p class="err-code" aria-hidden="true">404</p>
+      <span class="err-eyebrow">Off the radar</span>
+      <h1 id="err-title" class="err-title">That page isn't on the map.</h1>
+      <p class="err-sub">The link may be old, mistyped, or the venue page has moved. Everything we track across southern Colorado is one tap away.</p>
+      <div class="err-actions">
+        <a class="btn btn-primary" href="/index.html">Back to the live map</a>
+        <a class="btn btn-secondary" href="/pricing.html">See pricing</a>
+      </div>
+      <p class="err-hint">Looking for a venue? <a href="/index.html">Search the radar</a> &middot; <a href="/privacy.html">Privacy</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="/index.html">Home</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/city-license.html">City License</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+    <p class="footer-tagline">Built in Pueblo, Colorado — independent local intelligence</p>
+    <p class="footer-copy">&copy; <span id="yr">2026</span> Restaurant Radar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+    (function () {
+      var btn = document.getElementById('hamburger');
+      var nav = document.getElementById('siteNav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+      });
+    })();
+    (function () { var el = document.getElementById('yr'); if (el) el.textContent = new Date().getFullYear(); })();
+  </script>
+</body>
+</html>
