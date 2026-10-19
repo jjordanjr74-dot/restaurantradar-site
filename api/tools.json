@@ -1,0 +1,44 @@
+{
+  "schema_version": "webmcp-1.0",
+  "site": "https://restaurantradar.app",
+  "app_url": "https://app.restaurantradar.app",
+  "name": "Restaurant Radar",
+  "bilingual_languages": ["en", "es"],
+  "description": "Live venue intelligence map tracking 932 restaurants, food trucks, cafes, and 42 fuel stops across 8 Southern Colorado cities, with white-label City License expansion worldwide.",
+  "stats": {
+    "venues_tracked": 932,
+    "fuel_stops": 42,
+    "cities_covered": 8,
+    "verified_reviews": 3
+  },
+  "plans": [
+    {
+      "id": "founding_professional",
+      "name_en": "Founding Professional",
+      "name_es": "Profesional Fundador",
+      "price_monthly_usd": 9,
+      "commission_pct": 0,
+      "checkout_url": "https://app.restaurantradar.app/api/checkout/founding_professional"
+    },
+    {
+      "id": "city_license",
+      "name_en": "City License",
+      "name_es": "Licencia Municipal / Ciudad",
+      "price_monthly_usd": 199,
+      "commission_pct": 0,
+      "checkout_url": "https://app.restaurantradar.app/api/checkout/city_license"
+    }
+  ],
+  "tools": [
+    {
+      "name": "get_radar_stats",
+      "description": "Return published venue, fuel stop, and city counts covered by Restaurant Radar.",
+      "input_schema": {"type": "object", "properties": {}, "additionalProperties": false}
+    },
+    {
+      "name": "list_venue_plans",
+      "description": "Return published Founding Professional ($9/mo) and City License ($199/mo) pricing and 0%-commission terms.",
+      "input_schema": {"type": "object", "properties": {}, "additionalProperties": false}
+    }
+  ]
+}

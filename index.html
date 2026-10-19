@@ -9,6 +9,9 @@
   <link rel="manifest" href="manifest.json">
   <title>Restaurant Radar — Live venue map for Southern Colorado</title>
   <link rel="canonical" href="https://restaurantradar.app/">
+  <link rel="alternate" hreflang="en" href="https://restaurantradar.app/">
+  <link rel="alternate" hreflang="es" href="https://restaurantradar.app/?lang=es">
+  <link rel="modelcontext" href="api/tools.json">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Restaurant Radar">
@@ -223,6 +226,39 @@
 
     (function () { var el = document.getElementById('yr'); if (el) el.textContent = new Date().getFullYear(); })();
     if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(function () {}); }
+    (function () {
+      if (navigator.modelContext && typeof navigator.modelContext.registerTool === 'function') {
+        fetch('api/tools.json').then(function (r) { return r.json(); }).then(function (m) {
+          (m.tools || []).forEach(function (t) { try { navigator.modelContext.registerTool(t); } catch (e) {} });
+        }).catch(function () {});
+      }
+      var es = {
+        'Know what\'s open before you head out.': 'Sepa qué está abierto antes de salir.',
+        'Open live map': 'Abrir mapa en vivo',
+        'List your venue': 'Registrar su negocio',
+        'Every venue pin is a real database row.': 'Cada pin en el mapa es un registro verificado.',
+        'Three steps to somewhere open.': 'Tres pasos para encontrar dónde comer hoy.',
+        'Put your restaurant on the radar.': 'Ponga su restaurante en el radar.',
+        'See pricing': 'Ver precios',
+        'City license info': 'Licencia municipal'
+      };
+      var rev = {}; Object.keys(es).forEach(function (k) { rev[es[k]] = k; });
+      var bar = document.createElement('aside');
+      bar.style.cssText = 'position:fixed;bottom:16px;left:16px;z-index:999;background:#14161a;color:#f7f8f8;padding:6px 12px;border-radius:999px;border:1px solid #ffaa2b;display:flex;gap:8px;align-items:center;font-size:0.82rem;font-weight:700;';
+      var bEn = document.createElement('button'); bEn.type = 'button'; bEn.textContent = 'EN';
+      bEn.style.cssText = 'min-height:32px;padding:2px 10px;border-radius:999px;border:none;background:#ffaa2b;color:#1a0f00;font-weight:800;cursor:pointer;';
+      var bEs = document.createElement('button'); bEs.type = 'button'; bEs.textContent = 'Español (ES)';
+      bEs.style.cssText = 'min-height:32px;padding:2px 10px;border-radius:999px;border:1px solid #ffaa2b;background:transparent;color:#ffaa2b;font-weight:800;cursor:pointer;';
+      bar.appendChild(bEn); bar.appendChild(bEs); document.body.appendChild(bar);
+      function setLang(l) {
+        var d = l === 'es' ? es : rev;
+        document.querySelectorAll('h1,h2,h3,a').forEach(function (el) {
+          if (el.children.length === 0) { var t = (el.textContent || '').trim(); if (d[t]) el.textContent = d[t]; }
+        });
+      }
+      bEn.onclick = function () { setLang('en'); }; bEs.onclick = function () { setLang('es'); };
+      if (new URLSearchParams(location.search).get('lang') === 'es') setLang('es');
+    })();
   </script>
 </body>
 </html>

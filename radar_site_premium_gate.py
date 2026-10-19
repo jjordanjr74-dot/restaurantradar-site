@@ -80,7 +80,7 @@ def main():
         for l in re.findall(r'href="([^"]+)"', h):
             if l.startswith(("https://", "http://", "mailto:", "tel:", "#")):
                 continue
-            if l.startswith(("assets/", "/assets/")):
+            if l.startswith(("assets/", "/assets/", "api/", "/api/")):
                 f = l.lstrip("/").split("?")[0]
                 if not os.path.exists(os.path.join(REPO, f)):
                     bad.append(l)

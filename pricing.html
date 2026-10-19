@@ -9,6 +9,9 @@
   <link rel="manifest" href="manifest.json">
   <title>Pricing — Restaurant Radar</title>
   <link rel="canonical" href="https://restaurantradar.app/pricing.html">
+  <link rel="alternate" hreflang="en" href="https://restaurantradar.app/pricing.html">
+  <link rel="alternate" hreflang="es" href="https://restaurantradar.app/pricing.html?lang=es">
+  <link rel="modelcontext" href="api/tools.json">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Restaurant Radar">
@@ -139,6 +142,7 @@
             </tr>
           </tbody>
         </table>
+        <p style="margin-top: 14px; font-weight: 600; color: #ffaa2b;" id="radarCalcSummary">Annual Venue Savings with Founding Professional ($9/mo vs. $250/mo Yelp Ads + 20% delivery commissions): Save $2,892+/year while keeping 100% of every phone order. Se Habla Espa&ntilde;ol.</p>
       </div>
     </section>
 
@@ -213,6 +217,31 @@
     } else { document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('is-visible'); }); }
     (function () { var el = document.getElementById('yr'); if (el) el.textContent = new Date().getFullYear(); })();
     if ('serviceWorker' in navigator) { navigator.serviceWorker.register('/sw.js').catch(function () {}); }
+    (function () {
+      var es = {
+        'Simple, honest pricing': 'Precios simples y honestos',
+        'Founding Professional': 'Profesional Fundador',
+        'City License': 'Licencia Municipal',
+        'How Restaurant Radar Compares to National Ad & Reservation Platforms': 'Cómo Se Compara Restaurant Radar en la Economía Actual',
+        'Asked before subscribing': 'Preguntas frecuentes antes de suscribirse'
+      };
+      var rev = {}; Object.keys(es).forEach(function (k) { rev[es[k]] = k; });
+      var bar = document.createElement('aside');
+      bar.style.cssText = 'position:fixed;bottom:16px;left:16px;z-index:999;background:#14161a;color:#f7f8f8;padding:6px 12px;border-radius:999px;border:1px solid #ffaa2b;display:flex;gap:8px;align-items:center;font-size:0.82rem;font-weight:700;';
+      var bEn = document.createElement('button'); bEn.type = 'button'; bEn.textContent = 'EN';
+      bEn.style.cssText = 'min-height:32px;padding:2px 10px;border-radius:999px;border:none;background:#ffaa2b;color:#1a0f00;font-weight:800;cursor:pointer;';
+      var bEs = document.createElement('button'); bEs.type = 'button'; bEs.textContent = 'Español (ES)';
+      bEs.style.cssText = 'min-height:32px;padding:2px 10px;border-radius:999px;border:1px solid #ffaa2b;background:transparent;color:#ffaa2b;font-weight:800;cursor:pointer;';
+      bar.appendChild(bEn); bar.appendChild(bEs); document.body.appendChild(bar);
+      function setLang(l) {
+        var d = l === 'es' ? es : rev;
+        document.querySelectorAll('h1,h2,h3,a').forEach(function (el) {
+          if (el.children.length === 0) { var t = (el.textContent || '').trim(); if (d[t]) el.textContent = d[t]; }
+        });
+      }
+      bEn.onclick = function () { setLang('en'); }; bEs.onclick = function () { setLang('es'); };
+      if (new URLSearchParams(location.search).get('lang') === 'es') setLang('es');
+    })();
   </script>
 </body>
 </html>
