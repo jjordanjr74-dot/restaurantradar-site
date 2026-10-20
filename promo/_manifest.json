@@ -1,0 +1,95 @@
+{
+  "venture": "Restaurant Radar",
+  "package": "promo",
+  "built": "2026-10-17",
+  "deployed": false,
+  "files": [
+    {
+      "path": "LAUNCH_KIT.md",
+      "bytes": 8588
+    },
+    {
+      "path": "assets/hero.jpg",
+      "bytes": 85159
+    },
+    {
+      "path": "assets/og.png",
+      "bytes": 329045
+    },
+    {
+      "path": "assets/scenes/s2_venues.png",
+      "bytes": 46372
+    },
+    {
+      "path": "assets/scenes/s3_cities.png",
+      "bytes": 47822
+    },
+    {
+      "path": "assets/scenes/s4_hours.png",
+      "bytes": 37446
+    },
+    {
+      "path": "assets/scenes/s5_pricing.png",
+      "bytes": 49770
+    },
+    {
+      "path": "assets/scenes/s6_endcard.png",
+      "bytes": 35988
+    },
+    {
+      "path": "assets/social_1080.png",
+      "bytes": 486933
+    },
+    {
+      "path": "fonts/Inter-latin.woff2",
+      "bytes": 48256
+    },
+    {
+      "path": "fonts/JetBrainsMono-latin.woff2",
+      "bytes": 21832
+    },
+    {
+      "path": "fonts/OFL-Inter.txt",
+      "bytes": 4377
+    },
+    {
+      "path": "fonts/OFL-JetBrainsMono.txt",
+      "bytes": 4399
+    },
+    {
+      "path": "index.html",
+      "bytes": 15567
+    },
+    {
+      "path": "video/BRIEF.md",
+      "bytes": 4113
+    },
+    {
+      "path": "video/radar_16x9.jpg",
+      "bytes": 101942
+    },
+    {
+      "path": "video/storyboard.json",
+      "bytes": 1808
+    }
+  ],
+  "verified_against": {
+    "932 venues / 462 restaurants / 366 food trucks / 104 cafes": "D:/Hermes_Core/Monetization/Restaurant_Radar/restaurant_radar.db :: restaurants (count, venue_type)",
+    "8 cities (Colorado Springs, Pueblo, Fountain, Pueblo West, Manitou Springs, Falcon, Peyton, Fort Carson)": "restaurant_radar.db :: restaurants.city distinct",
+    "40 fuel stops in Pueblo and Pueblo West": "restaurant_radar.db :: gas_stations (count, city)",
+    "404 venues with published hours": "restaurant_radar.db :: restaurants.hours_today non-empty",
+    "923 OSM / 8 roaminghunger / 1 operator": "restaurant_radar.db :: restaurants.source",
+    "Founding Professional $9/mo, first 10 venues, rate locked": "D:/Hermes_Core/Teams/Marketing/ops/offer_truth.json advertised_prices_usd['9'] + Monetization/Restaurant_Radar/app.py PLACEMENT_TIERS",
+    "City License $199/mo, white-label, embed widget": "offer_truth.json advertised_prices_usd['199'] + app.py PLACEMENT_TIERS + workspace/Restaurant_Radar/city-license.html",
+    "Free to search, no account, no ordering": "workspace/Restaurant_Radar/index.html + pricing.html",
+    "Cancel any time": "workspace/Restaurant_Radar/pricing.html + city-license.html",
+    "Checkout endpoints -> cs_live_ session HTTP 200": "curl 2026-10-17 (see LAUNCH_KIT.md section 2)",
+    "Live app HTTP 200": "curl https://app.restaurantradar.app 2026-10-17",
+    "edge-tts voice en-US-AndrewNeural": "edge-tts --list-voices on this host 2026-10-17",
+    "No safety/amenity/review/verified data": "restaurant_radar.db :: verified_at empty on all rows; gas_station_reviews 0; restaurant_comments 0",
+    "Hero / poster / og / social photo": "workspace/Restaurant_Radar/assets/img/product-map.png (real product screenshot)",
+    "video/storyboard.json schema + content": "Teams/Marketing/video/test_storyboards/wwe_test.json keys; make_promo_video.py --dry-run VALIDATION OK 2026-10-17"
+  },
+  "total_files": 18,
+  "total_bytes_excluding_manifest": 1329417
+}

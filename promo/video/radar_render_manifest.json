@@ -1,0 +1,223 @@
+{
+ "slug": "radar",
+ "voice": "en-US-AndrewNeural",
+ "tts_python": "D:\\HermesPortable\\hermes_home\\installs\\7a3b3f3f6efeb7b0\\environments\\1265287d30ae4eebb931538094a3bf03\\venv\\Scripts\\python.exe",
+ "total_s": 30.1334,
+ "items": [
+  {
+   "index": 0,
+   "kind": "scene",
+   "hint": 5.0,
+   "vo_len": 4.08,
+   "window": 5.0,
+   "extended": false,
+   "start": 0.0,
+   "end": 5.0,
+   "clip_len": 5.5
+  },
+  {
+   "index": 1,
+   "kind": "scene",
+   "hint": 5.0,
+   "vo_len": 5.736,
+   "window": 6.4667,
+   "extended": true,
+   "start": 5.0,
+   "end": 11.4667,
+   "clip_len": 6.9667
+  },
+  {
+   "index": 2,
+   "kind": "scene",
+   "hint": 5.0,
+   "vo_len": 4.944,
+   "window": 5.6667,
+   "extended": true,
+   "start": 11.4667,
+   "end": 17.1334,
+   "clip_len": 6.1667
+  },
+  {
+   "index": 3,
+   "kind": "scene",
+   "hint": 5.0,
+   "vo_len": 4.2,
+   "window": 5.0,
+   "extended": false,
+   "start": 17.1334,
+   "end": 22.1334,
+   "clip_len": 5.5
+  },
+  {
+   "index": 4,
+   "kind": "scene",
+   "hint": 5.0,
+   "vo_len": 4.176,
+   "window": 5.0,
+   "extended": false,
+   "start": 22.1334,
+   "end": 27.1334,
+   "clip_len": 5.5
+  },
+  {
+   "index": 5,
+   "kind": "cta",
+   "hint": 3.0,
+   "vo_len": null,
+   "window": 3.0,
+   "extended": false,
+   "start": 27.1334,
+   "end": 30.1334,
+   "clip_len": 3.0
+  }
+ ],
+ "vo_texts": [
+  "Heading down I-25 hungry? Check what's open before you pull off.",
+  "Nine hundred thirty-two restaurants, food trucks and cafes sit on one live map.",
+  "Eight cities from Colorado Springs to Pueblo, with forty fuel stops alongside.",
+  "Where hours are published, the pin tells you open or closed right now.",
+  "Own a Pueblo venue? Founding Professional is nine dollars a month.",
+  null
+ ],
+ "outputs": {
+  "9x16": {
+   "mp4": "radar_9x16.mp4",
+   "poster": "radar_9x16.jpg",
+   "bytes": 6070063,
+   "poster_bytes": 57373,
+   "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1080,
+      "height": 1920,
+      "pix_fmt": "yuvj420p",
+      "r_frame_rate": "30/1"
+     },
+     {
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "sample_rate": "48000",
+      "r_frame_rate": "0/0"
+     }
+    ],
+    "format": {
+     "duration": "30.166667",
+     "size": "6070063"
+    }
+   },
+   "midpoint_luma": [
+    {
+     "index": 0,
+     "t": 2.5,
+     "mean_luma": 152.4,
+     "std_luma": 95.22
+    },
+    {
+     "index": 1,
+     "t": 8.233,
+     "mean_luma": 15.45,
+     "std_luma": 36.99
+    },
+    {
+     "index": 2,
+     "t": 14.3,
+     "mean_luma": 13.9,
+     "std_luma": 38.44
+    },
+    {
+     "index": 3,
+     "t": 19.633,
+     "mean_luma": 15.7,
+     "std_luma": 42.35
+    },
+    {
+     "index": 4,
+     "t": 24.633,
+     "mean_luma": 19.45,
+     "std_luma": 48.02
+    },
+    {
+     "index": 5,
+     "t": 28.633,
+     "mean_luma": 19.49,
+     "std_luma": 45.89
+    }
+   ],
+   "duration_delta_s": 0.033
+  },
+  "16x9": {
+   "mp4": "radar_16x9.mp4",
+   "poster": "radar_16x9.jpg",
+   "bytes": 6198526,
+   "poster_bytes": 52822,
+   "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+     {
+      "codec_name": "h264",
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080,
+      "pix_fmt": "yuvj420p",
+      "r_frame_rate": "30/1"
+     },
+     {
+      "codec_name": "aac",
+      "codec_type": "audio",
+      "sample_rate": "48000",
+      "r_frame_rate": "0/0"
+     }
+    ],
+    "format": {
+     "duration": "30.166667",
+     "size": "6198526"
+    }
+   },
+   "midpoint_luma": [
+    {
+     "index": 0,
+     "t": 2.5,
+     "mean_luma": 142.21,
+     "std_luma": 94.42
+    },
+    {
+     "index": 1,
+     "t": 8.233,
+     "mean_luma": 13.39,
+     "std_luma": 33.06
+    },
+    {
+     "index": 2,
+     "t": 14.3,
+     "mean_luma": 12.08,
+     "std_luma": 33.56
+    },
+    {
+     "index": 3,
+     "t": 19.633,
+     "mean_luma": 14.32,
+     "std_luma": 38.93
+    },
+    {
+     "index": 4,
+     "t": 24.633,
+     "mean_luma": 18.03,
+     "std_luma": 45.24
+    },
+    {
+     "index": 5,
+     "t": 28.633,
+     "mean_luma": 17.06,
+     "std_luma": 40.44
+    }
+   ],
+   "duration_delta_s": 0.033
+  }
+ },
+ "music": null
+}

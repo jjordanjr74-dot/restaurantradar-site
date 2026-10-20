@@ -1,0 +1,56 @@
+{
+ "venture": "Restaurant Radar",
+ "slug": "radar",
+ "voice": "en-US-AndrewNeural",
+ "brand": {
+  "palette": [
+   "#FFAA2B",
+   "#07080A",
+   "#F7F8F8"
+  ],
+  "font_hint": "segoe"
+ },
+ "scenes": [
+  {
+   "image": "D:/Hermes_Core/workspace/Restaurant_Radar/promo/assets/hero.jpg",
+   "headline": "Know what's open first",
+   "sub": "Live venue map for southern Colorado",
+   "vo": "Heading down I-25 hungry? Check what's open before you pull off.",
+   "dur": 5.0,
+   "credit": "Product screenshot: restaurantradar.app"
+  },
+  {
+   "image": "D:/Hermes_Core/workspace/Restaurant_Radar/promo/assets/scenes/video_bg2_venues.png",
+   "headline": "932 venues, one map",
+   "sub": "Restaurants, food trucks and cafes together",
+   "vo": "Nine hundred thirty-two restaurants, food trucks and cafes sit on one live map.",
+   "dur": 5.0
+  },
+  {
+   "image": "D:/Hermes_Core/workspace/Restaurant_Radar/promo/assets/scenes/video_bg3_cities.png",
+   "headline": "Eight cities along I-25",
+   "sub": "Colorado Springs to Pueblo, plus 40 fuel stops",
+   "vo": "Eight cities from Colorado Springs to Pueblo, with forty fuel stops alongside.",
+   "dur": 5.0
+  },
+  {
+   "image": "D:/Hermes_Core/workspace/Restaurant_Radar/promo/assets/scenes/video_bg4_hours.png",
+   "headline": "Open or closed, right now",
+   "sub": "From published hours, never a guess",
+   "vo": "Where hours are published, the pin tells you open or closed right now.",
+   "dur": 5.0
+  },
+  {
+   "image": "D:/Hermes_Core/workspace/Restaurant_Radar/promo/assets/scenes/video_bg5_listed.png",
+   "headline": "Own a venue? Get listed",
+   "sub": "Founding Professional $9/mo, first 10 venues",
+   "vo": "Own a Pueblo venue? Founding Professional is nine dollars a month.",
+   "dur": 5.0
+  }
+ ],
+ "cta": {
+  "line": "Open the live map",
+  "url": "restaurantradar.app",
+  "dur": 3.0
+ }
+}
