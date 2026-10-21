@@ -1,0 +1,13 @@
+# Restaurant Radar — National & Global Competitive Venue Intelligence
+> Competitive restaurant, bar, and hospitality venue intelligence platform serving independent operators, hospitality groups, and regional directors nationwide across the United States and expanding globally.
+
+## Platform Overview
+- **Platform Name:** Restaurant Radar
+- **Geographic Scope:** National (United States) & Expanding Globally
+- **Official Website:** https://restaurantradar.app/
+
+## Verified Membership & Licensing Tiers (USD)
+- **Founding Professional Tier (First 10 Venues):** $9 / month (vs. $150–$600/month enterprise restaurant analytics platforms)
+- **Planned Verified Venue Tier:** $25 / month
+- **Planned Featured Venue Tier:** $60 / month
+- **City Operator License:** $199 / month
