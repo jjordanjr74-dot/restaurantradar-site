@@ -84,6 +84,85 @@
       <div class="stat"><span class="stat-num">3</span><span class="stat-label">reviews from early users</span></div>
     </div>
 
+    
+    <!-- Midnight Safe-Stop & Route-Ahead Food Radar -->
+    <section class="section wrap" id="safe-stops" aria-labelledby="safestop-title">
+      <div class="section-header reveal">
+        <span class="eyebrow">Midnight Safe-Stop &amp; Route-Ahead Radar</span>
+        <h2 id="safestop-title">Know which stops are well-lit, family-safe, and open late.</h2>
+        <p>Driving late on I-25 or US-50 with kids, elderly parents, dogs, or disabled loved ones? Filter 932 verified Southern Colorado stops before you pull off the dark highway.</p>
+      </div>
+
+      <!-- Safe Stop Interactive Filters -->
+      <div class="safe-filter-bar reveal" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px">
+        <button type="button" class="btn btn-ghost safe-filter is-active" data-filter="all" style="min-height:48px;font-size:14px;padding:10px 18px">All Corridor Stops</button>
+        <button type="button" class="btn btn-ghost safe-filter" data-filter="lit" style="min-height:48px;font-size:14px;padding:10px 18px">🌙 Well-Lit &amp; Security Monitored</button>
+        <button type="button" class="btn btn-ghost safe-filter" data-filter="bath" style="min-height:48px;font-size:14px;padding:10px 18px">🚻 Clean Family Restroom</button>
+        <button type="button" class="btn btn-ghost safe-filter" data-filter="dog" style="min-height:48px;font-size:14px;padding:10px 18px">🐕 Fenced Dog Run</button>
+        <button type="button" class="btn btn-ghost safe-filter" data-filter="ada" style="min-height:48px;font-size:14px;padding:10px 18px">♿ Wheelchair / ADA Stall</button>
+        <button type="button" class="btn btn-ghost safe-filter" data-filter="food" style="min-height:48px;font-size:14px;padding:10px 18px">🍖 Kitchen Open Now</button>
+      </div>
+
+      <!-- Stop Cards Grid -->
+      <div class="grid cols-1 col-lg-3" id="stopCardsGrid">
+        <div class="feature-card reveal" style="border:1px solid var(--border,#334155);border-radius:12px;padding:20px;background:var(--card-bg,#1e293b)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span class="eyebrow" style="color:#fbbf24;margin:0">I-25 · Exit 101 (Pueblo)</span>
+            <span style="font-size:12px;background:#065f46;color:#34d399;padding:3px 8px;border-radius:6px;font-weight:700">Open 24/7</span>
+          </div>
+          <h3 style="margin:4px 0 8px">Love's Travel Stop &amp; Fresh Market</h3>
+          <p style="font-size:14px;color:#cbd5e1;margin-bottom:14px">High-lumen LED canopy lighting, dedicated security patrol, spotless private family locking restrooms, and clean fenced pet exercise area.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">🌙 High-Lumen LED</span>
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">🚻 Family Restroom</span>
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">🐕 Dog Run</span>
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">♿ Zero-Step ADA</span>
+          </div>
+          <div style="display:flex;gap:8px">
+            <a href="tel:7195452272" class="btn btn-ghost" style="min-height:48px;flex:1;text-align:center;font-size:13px;padding:10px 8px;display:flex;align-items:center;justify-content:center">Call Stop</a>
+            <button type="button" class="btn btn-primary btn-checkin" style="min-height:48px;flex:1;font-size:13px;padding:10px 8px" onclick="this.textContent='✅ Verified Safe';this.style.background='#059669'">Verify Stop</button>
+          </div>
+        </div>
+
+        <div class="feature-card reveal" style="border:1px solid var(--border,#334155);border-radius:12px;padding:20px;background:var(--card-bg,#1e293b)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span class="eyebrow" style="color:#fbbf24;margin:0">US-50 Corridor · Pueblo West</span>
+            <span style="font-size:12px;background:#065f46;color:#34d399;padding:3px 8px;border-radius:6px;font-weight:700">Kitchen Open</span>
+          </div>
+          <h3 style="margin:4px 0 8px">Westside Craft Diner &amp; Pitstop</h3>
+          <p style="font-size:14px;color:#cbd5e1;margin-bottom:14px">Hot late-night kitchen firing until midnight. Order ahead 15 minutes before reaching Pueblo West; your meal is hot and waiting at pickup.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">🍖 Late Night Grill</span>
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">🚻 Clean Restrooms</span>
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">♿ Ramp Entrance</span>
+          </div>
+          <div style="display:flex;gap:8px">
+            <a href="tel:7195478777" class="btn btn-ghost" style="min-height:48px;flex:1;text-align:center;font-size:13px;padding:10px 8px;display:flex;align-items:center;justify-content:center">Order Ahead</a>
+            <button type="button" class="btn btn-primary btn-checkin" style="min-height:48px;flex:1;font-size:13px;padding:10px 8px" onclick="this.textContent='✅ Verified Open';this.style.background='#059669'">Verify Open</button>
+          </div>
+        </div>
+
+        <div class="feature-card reveal" style="border:1px solid var(--border,#334155);border-radius:12px;padding:20px;background:var(--card-bg,#1e293b)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span class="eyebrow" style="color:#fbbf24;margin:0">I-25 · Exit 128 (Fountain)</span>
+            <span style="font-size:12px;background:#065f46;color:#34d399;padding:3px 8px;border-radius:6px;font-weight:700">Open 24/7</span>
+          </div>
+          <h3 style="margin:4px 0 8px">Fountain Valley Travel Plaza</h3>
+          <p style="font-size:14px;color:#cbd5e1;margin-bottom:14px">Full security camera surveillance, well-lit perimeter, baby changing station, ADA wide-stall family restroom, and clean double-fenced pet relief zone.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px">
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">🌙 Perimeter Cameras</span>
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">🚻 Baby Changing</span>
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">🐕 Double-Fenced</span>
+            <span style="font-size:11px;background:#0f172a;color:#94a3b8;padding:4px 8px;border-radius:4px">♿ Accessible</span>
+          </div>
+          <div style="display:flex;gap:8px">
+            <a href="tel:7193827451" class="btn btn-ghost" style="min-height:48px;flex:1;text-align:center;font-size:13px;padding:10px 8px;display:flex;align-items:center;justify-content:center">Call Stop</a>
+            <button type="button" class="btn btn-primary btn-checkin" style="min-height:48px;flex:1;font-size:13px;padding:10px 8px" onclick="this.textContent='✅ Verified Clean';this.style.background='#059669'">Verify Clean</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Features -->
     <section class="section wrap" aria-labelledby="features-title">
       <div class="section-header reveal">
