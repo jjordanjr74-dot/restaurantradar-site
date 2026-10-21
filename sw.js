@@ -1,4 +1,4 @@
-const CACHE = 'radar-v2';
+const CACHE = 'radar-v3';
 const SHELL = [
   '/',
   '/index.html',
