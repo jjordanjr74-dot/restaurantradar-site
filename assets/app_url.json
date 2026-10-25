@@ -1,5 +1,5 @@
 {
-  "url": "https://capital-bench-prospect-lobby.trycloudflare.com",
-  "checkout_founding": "https://capital-bench-prospect-lobby.trycloudflare.com/api/checkout/founding_professional",
-  "checkout_city": "https://capital-bench-prospect-lobby.trycloudflare.com/api/checkout/city_license"
+  "url": "https://app.restaurantradar.app",
+  "checkout_founding": "https://app.restaurantradar.app/api/checkout/founding_professional",
+  "checkout_city": "https://app.restaurantradar.app/api/checkout/city_license"
 }
