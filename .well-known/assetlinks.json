@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.restaurantradar.twa",
+      "sha256_cert_fingerprints": [
+        "3A:3F:53:15:A4:72:6C:19:BA:07:32:95:CE:CA:BA:8D:BE:99:FD:93:7A:82:50:C6:3D:C2:E7:B7:7C:44:67:E4"
+      ]
+    }
+  }
+]
