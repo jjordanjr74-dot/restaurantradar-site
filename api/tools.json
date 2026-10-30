@@ -3,12 +3,17 @@
   "site": "https://restaurantradar.app",
   "app_url": "https://app.restaurantradar.app",
   "name": "Restaurant Radar",
-  "bilingual_languages": ["en", "es"],
-  "description": "Live venue intelligence map tracking 932 restaurants, food trucks, cafes, and 42 fuel stops across 8 Southern Colorado cities, with white-label City License expansion worldwide.",
+  "bilingual_languages": [
+    "en",
+    "es"
+  ],
+  "description": "Live venue intelligence map tracking 1540 restaurants, food trucks, cafes, and 242 fuel stops (45 with live operator-verified pump prices) across 17 Southern Colorado cities, with white-label City License expansion worldwide.",
   "stats": {
-    "venues_tracked": 932,
-    "fuel_stops": 42,
-    "cities_covered": 8,
+    "venues_tracked": 1540,
+    "fuel_stops": 242,
+    "fuel_stops_with_live_prices": 45,
+    "fuel_price_reports": 90,
+    "cities_covered": 17,
     "verified_reviews": 3
   },
   "plans": [
@@ -32,13 +37,148 @@
   "tools": [
     {
       "name": "get_radar_stats",
-      "description": "Return published venue, fuel stop, and city counts covered by Restaurant Radar.",
-      "input_schema": {"type": "object", "properties": {}, "additionalProperties": false}
+      "description": "Return published venue, fuel stop, live pump price, and city counts covered by Restaurant Radar.",
+      "endpoint": "https://restaurantradar.app/api/tools.json",
+      "method": "GET",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "search_restaurants_near",
+      "description": "Search real restaurants, food trucks, and cafes near a latitude/longitude or city on Restaurant Radar.",
+      "endpoint": "https://app.restaurantradar.app/api/radar",
+      "method": "GET",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number",
+            "description": "Traveler latitude (e.g. 38.2544)"
+          },
+          "lon": {
+            "type": "number",
+            "description": "Traveler longitude (e.g. -104.6091)"
+          },
+          "city": {
+            "type": "string",
+            "description": "Optional city filter (e.g. Pueblo, Colorado Springs, Castle Rock, Ca\u00f1on City, Salida)"
+          },
+          "cuisine": {
+            "type": "string",
+            "description": "Optional cuisine substring"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "search_fuel_stops_near",
+      "description": "Search fuel stations and 24/7 truck stops near a latitude/longitude with live Regular/Diesel/E85 pump prices.",
+      "endpoint": "https://app.restaurantradar.app/api/gas-stations",
+      "method": "GET",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number",
+            "description": "Traveler latitude"
+          },
+          "lon": {
+            "type": "number",
+            "description": "Traveler longitude"
+          },
+          "radius": {
+            "type": "number",
+            "description": "Radius in miles (default 35)"
+          },
+          "truck_only": {
+            "type": "boolean",
+            "description": "Filter to HGV/truck stops only"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "get_route_recommendations",
+      "description": "Return deterministic best picks within radius: nearest_food, nearest_fuel, night_stop, cheap_eat, cheapest_fuel, and open_now.",
+      "endpoint": "https://app.restaurantradar.app/api/recommendations",
+      "method": "GET",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number"
+          },
+          "lon": {
+            "type": "number"
+          },
+          "radius": {
+            "type": "number",
+            "default": 35
+          },
+          "legs": {
+            "type": "integer",
+            "enum": [
+              0,
+              1
+            ],
+            "default": 0
+          }
+        },
+        "required": [
+          "lat",
+          "lon"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "report_fuel_price",
+      "description": "Submit a verified pump price per gallon (regular, diesel, e85) for a station ID.",
+      "endpoint": "https://app.restaurantradar.app/api/fuel-price",
+      "method": "POST",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "station_id": {
+            "type": "integer"
+          },
+          "grade": {
+            "type": "string",
+            "enum": [
+              "regular",
+              "diesel",
+              "e85"
+            ]
+          },
+          "price": {
+            "type": "number",
+            "minimum": 0.5,
+            "maximum": 15.0
+          }
+        },
+        "required": [
+          "station_id",
+          "grade",
+          "price"
+        ],
+        "additionalProperties": false
+      }
     },
     {
       "name": "list_venue_plans",
       "description": "Return published Founding Professional ($9/mo) and City License ($199/mo) pricing and 0%-commission terms.",
-      "input_schema": {"type": "object", "properties": {}, "additionalProperties": false}
+      "endpoint": "https://app.restaurantradar.app/pricing",
+      "method": "GET",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
     }
   ]
 }

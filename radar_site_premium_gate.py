@@ -142,7 +142,7 @@ def main():
         check(f"G6b {p} inline JS parses", r.returncode == 0, (r.stderr or "")[:120])
 
     # ---- G7 honesty of numbers ------------------------------------------
-    check("G7 venue count cited (932)", "932" in html["index.html"])
+    check("G7 venue count cited (1540)", "1540" in html["index.html"])
     check("G7b false 247/94% claims absent", "247" not in joined and "94%" not in joined)
     check("G7c review stat is the true count (3), not the test-inflated 4",
           ">3<" in html["index.html"].replace(" ", "") and "reviews from early users" in html["index.html"]

@@ -3,7 +3,7 @@
 
 ## Platform Overview
 - **Platform Name:** Restaurant Radar
-- **Geographic Scope:** Launching from Southern Colorado (932+ tracked restaurants, cafes, bars, and fuel stops) across the United States and globally.
+- **Geographic Scope:** Launching from Southern Colorado (1540+ tracked restaurants, cafes, bars, and fuel stops) across the United States and globally.
 - **Official Website:** https://restaurantradar.app/
 - **Core Traveler Features:** Midnight safe-stop lighting & security ratings, clean family bathroom reports, ADA/wheelchair accessibility, fenced dog runs, and live open-now restaurants for route-ahead ordering.
 
