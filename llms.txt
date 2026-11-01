@@ -1,14 +1,23 @@
-# Restaurant Radar — Live Traveler Safe-Stop & Open Restaurant Radar (National & Global)
+# Restaurant Radar — Live Traveler Safe-Stop and Open Restaurant Radar (National and Global)
 > Know what's open, well-lit, and family-safe before you pull off the highway. Restaurant Radar helps families, single parents driving at night, pet owners, and travelers with disabled family members find well-lit, secure gas stations, clean restrooms, fenced dog runs, ADA-accessible stops, and live open kitchens along their route so they can order ahead and save time.
 
 ## Platform Overview
 - **Platform Name:** Restaurant Radar
-- **Geographic Scope:** Launching from Southern Colorado (1540+ tracked restaurants, cafes, bars, and fuel stops) across the United States and globally.
+- **Geographic Scope:** Launching from Southern Colorado across the United States and globally.
 - **Official Website:** https://restaurantradar.app/
-- **Core Traveler Features:** Midnight safe-stop lighting & security ratings, clean family bathroom reports, ADA/wheelchair accessibility, fenced dog runs, and live open-now restaurants for route-ahead ordering.
+- **Agent / WebMCP Tool Manifest:** https://restaurantradar.app/api/tools.json
+- **Sitemap:** https://restaurantradar.app/sitemap.xml
+- **Core Traveler Features:** Midnight safe-stop lighting and security ratings, clean family bathroom reports, ADA/wheelchair accessibility, fenced dog runs, and live open-now restaurants for route-ahead ordering.
 
-## Verified Venue Membership & Licensing Tiers (USD)
-- **Founding Professional Tier (First 10 Venues):** $9 / month (vs. $150–$600/month enterprise restaurant platforms)
+## Key Landing Pages and City Guides
+- **Home and Live Open Radar:** https://restaurantradar.app/
+- **City Operator License:** https://restaurantradar.app/city-license.html
+- **Pueblo, CO Guide:** https://restaurantradar.app/best-restaurants-pueblo-co.html
+- **Colorado Springs, CO Guide:** https://restaurantradar.app/best-restaurants-colorado-springs.html
+- **Denver, CO Guide:** https://restaurantradar.app/best-restaurants-denver-co.html
+
+## Verified Venue Membership and Licensing Tiers (USD)
+- **Founding Professional Tier (First 10 Venues):** $9 / month (vs. $150-$600/month enterprise restaurant platforms)
 - **Planned Verified Venue Tier:** $25 / month
 - **Planned Featured Venue Tier:** $60 / month
 - **City Operator License:** $199 / month
