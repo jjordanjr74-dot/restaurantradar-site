@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+# /api/checkout/{tier} opens a LIVE Stripe checkout session per request. Crawlers following the
+# "Founding $9/mo" links minted 285 real sessions with zero payments (measured 2026-11-02:
+# Googlebot 66.249.72.x + Bingbot 157.55.39.192), which made the money funnel unreadable.
+Disallow: /api/checkout/
+Disallow: /checkout/
 
 Sitemap: https://restaurantradar.app/sitemap.xml
