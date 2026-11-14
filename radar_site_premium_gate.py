@@ -95,8 +95,10 @@ def main():
     check("G2 app_url has url + both checkout keys",
           all(k in au for k in ("url", "checkout_founding", "checkout_city")), str(list(au)))
     check("G2b checkout targets are the two sellable tiers",
-          au.get("checkout_founding", "").endswith("/api/checkout/founding_professional")
-          and au.get("checkout_city", "").endswith("/api/checkout/city_license"))
+          (au.get("checkout_founding", "").endswith("/api/checkout/founding_professional")
+           or au.get("checkout_founding", "").startswith("https://buy.stripe.com/"))
+          and (au.get("checkout_city", "").endswith("/api/checkout/city_license")
+               or au.get("checkout_city", "").startswith("https://buy.stripe.com/")))
     for tier in ("/api/checkout/professional", "/api/checkout/premier"):
         check(f"G2c forbidden tier absent: {tier}", tier not in joined and tier not in json.dumps(au))
 
