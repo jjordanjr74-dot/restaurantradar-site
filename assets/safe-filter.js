@@ -36,7 +36,7 @@
       note.id = 'safeFilterEmpty';
       note.setAttribute('role', 'status');
       note.style.cssText = 'margin:18px 0;padding:14px 16px;border-radius:10px;' +
-        'border:1px solid #10b981;background:rgba(16,185,129,0.08);color:#0f172a;font-weight:600';
+        'border:1px solid #10b981;background:rgba(16,185,129,0.08);color:#1c1917;font-weight:600';
       grid.parentNode.insertBefore(note, grid.nextSibling);
     }
     var btn = document.querySelector('.safe-filter[data-filter="' + activeKey + '"]');
@@ -63,7 +63,7 @@
         live = document.createElement('p');
         live.id = 'safeFilterCount';
         live.setAttribute('aria-live', 'polite');
-        live.style.cssText = 'margin:-14px 0 18px;font-size:13px;font-weight:600;color:#334155';
+        live.style.cssText = 'margin:-14px 0 18px;font-size:13px;font-weight:600;color:#44403c';
         grid.parentNode.insertBefore(live, grid);
       }
       live.textContent = key === 'all'
