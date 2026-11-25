@@ -21,6 +21,19 @@
   <meta name="twitter:description" content="18 tracked restaurants and 7 fuel stops in Trinidad, CO.">
   <meta name="twitter:image" content="https://restaurantradar.app/assets/img/og-image.png">
   <link rel="stylesheet" href="assets/site.css">
+<style>
+/* 44px touch-target floor (WCAG 2.5.5) rendered-DOM 2026-11-25 */
+header a, nav a, footer a, [role=tab], button, select, .chip, .pill, .tag, .skip, .back,
+a[href^="mailto:"], a[href^="tel:"], a[download], a[href$=".apk"],
+[class*="btn"], [class*="cta"], [class*="lang"] a, [class*="lang"] button {
+  min-height: 44px; min-width: 44px; display: inline-flex; align-items: center;
+}
+/* inline text links: expand the hit area without changing line layout */
+a { min-height: 44px; }
+p a, h1 a, h2 a, h3 a, h4 a, h5 a, td a, dd a, strong a, b a, em a, span a, a:has(> strong), a:has(> b), a:has(> em), .footer-sister a, .err-hint a, li a {
+  padding: 15px 4px; margin: -15px -4px;
+}
+</style>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
